@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Together | Virtual Study Rooms & Co-Working Scrapbook</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/themes.css">
+
+  <!-- Immediate Theme Loader to prevent flicker -->
+  <script src="js/theme.js"></script>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+          </svg>
+        </span>
+        <span>Study Together</span>
+        <span class="logo-sub">scrapbook</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="lobby.html">Study Rooms</a></li>
+          <li><a href="about.html">About</a></li>
+          <!-- Theme Toggle Button -->
+          <li>
+            <button type="button" class="theme-toggle-btn" aria-label="Toggle dark/light mode">
+              <span class="theme-toggle-icon"></span>
+              <span class="theme-toggle-text">Day Paper</span>
+            </button>
+          </li>
+          <!-- Auth container: Log in or User Name -->
+          <li id="nav-auth-container">
+            <a href="login.html" class="btn btn-primary btn-sm">Log In</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero section with Scrapbook Collage -->
+    <section class="hero">
+      <div class="container hero-collage-wrap">
+        
+        <!-- Pinned status badge -->
+        <div class="hero-pill">
+          <span class="pulse-dot"></span>
+          <span>142 students studying together right now</span>
+        </div>
+
+        <h1 class="hero-title">
+          Beat procrastination, <span class="highlight">study with peers</span> in real-time.
+        </h1>
+        
+        <p class="hero-subtitle">
+          Jump into cozy virtual study rooms with quiet video co-working, vintage Pomodoro timers, and your own tear-off to-do checklist. Zero hassle—just pick a room and focus.
+        </p>
+
+        <div class="hero-actions">
+          <a href="lobby.html" class="btn btn-primary btn-large">
+            Join a Room Now &rarr;
+          </a>
+          <a href="#testimonials" class="btn btn-secondary btn-large">
+            Student Scrapbook Notes
+          </a>
+        </div>
+
+        <!-- Scrapbook floating paper scraps and SVG icons -->
+        <div class="hero-stickers-row">
+          <div class="mini-scrap mini-scrap-1">
+            <span class="washi-tape tape-rose tape-corner-left"></span>
+            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              <line x1="6" y1="2" x2="6" y2="5"></line>
+              <line x1="10" y1="2" x2="10" y2="5"></line>
+            </svg>
+            <span>Hot matcha &amp; calculus drills</span>
+          </div>
+          <div class="mini-scrap mini-scrap-2">
+            <span class="washi-tape tape-honey" style="width: 70px; top: -8px;"></span>
+            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="13" r="8"></circle>
+              <path d="M12 9v4l2 2"></path>
+              <path d="M10 2h4"></path>
+            </svg>
+            <span>4 Pomodoros finished today</span>
+          </div>
+          <div class="mini-scrap mini-scrap-3">
+            <span class="push-pin pin-teal"></span>
+            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+              <line x1="8" y1="20" x2="8" y2="22"></line>
+              <line x1="12" y1="20" x2="12" y2="22"></line>
+              <line x1="16" y1="20" x2="16" y2="22"></line>
+            </svg>
+            <span>Lo-Fi rain background</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Live stats strip styled as a stamped paper ticket -->
+    <section class="stats-strip">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h3>142</h3>
+            <p>Studying Now</p>
+          </div>
+          <div class="stat-item">
+            <h3>14</h3>
+            <p>Active Rooms</p>
+          </div>
+          <div class="stat-item">
+            <h3>3,850+</h3>
+            <p>Focus Hours Logged</p>
+          </div>
+          <div class="stat-item">
+            <h3>96%</h3>
+            <p>Report Better Focus</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Room Vibes Preview (Pinned Cards) -->
+    <section style="padding: 10px 0 60px;">
+      <div class="container">
+        <h2 class="section-title">Pick Your Study Vibe</h2>
+        <p class="section-desc">Different days need different environments. Choose what fits your mood.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; margin-bottom: 50px;">
+          
+          <!-- Cozy Card -->
+          <div class="card card-cozy" style="transform: rotate(-1.2deg);">
+            <span class="washi-tape tape-honey"></span>
+            <span class="stamp-badge stamp-honey" style="margin-bottom: 14px;">
+              <svg class="icon-svg icon-sm" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              </svg>
+              Cozy Vibe
+            </span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 8px;">Warm, Relaxed &amp; Calm</h3>
+            <p style="color: var(--text-muted); font-size: 0.94rem; margin-bottom: 20px; line-height: 1.6;">
+              Soft amber lighting, rain on the window, and gentle lo-fi beats. Perfect for casual reading, essay writing, and sketching lecture notes.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1.5px dashed var(--border-color); padding-top: 14px;">
+              <span class="hand-note" style="font-size: 1.15rem; color: var(--vibe-accent);">warm coffee shop vibe</span>
+              <a href="lobby.html" class="btn btn-secondary btn-sm">Explore Cozy &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Focus Card -->
+          <div class="card card-focus" style="transform: rotate(1deg);">
+            <span class="washi-tape tape-sky"></span>
+            <span class="stamp-badge stamp-primary" style="margin-bottom: 14px;">
+              <svg class="icon-svg icon-sm" viewBox="0 0 24 24" aria-hidden="true">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+              Intense Focus
+            </span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 8px;">Deep Sprint &amp; Zero Distraction</h3>
+            <p style="color: var(--text-muted); font-size: 0.94rem; margin-bottom: 20px; line-height: 1.6;">
+              Minimalist dark blueprint layout with electric accents. Complete silence and strict 25/5 or 50/10 Pomodoro sprints for coding and problem sets.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1.5px dashed var(--border-color); padding-top: 14px;">
+              <span class="hand-note" style="font-size: 1.15rem; color: var(--vibe-accent);">deep concentration</span>
+              <a href="lobby.html" class="btn btn-secondary btn-sm">Explore Focus &rarr;</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Reviews / Testimonials Scrapbook Wall -->
+    <section id="testimonials" style="padding-bottom: 50px;">
+      <div class="container">
+        <h2 class="section-title">What Students Say</h2>
+        <p class="section-desc">Pinned notes and real reviews from students preparing for finals, papers, and coding sprints.</p>
+
+        <div class="reviews-grid">
+          
+          <!-- Review 1 -->
+          <div class="card review-card">
+            <span class="washi-tape tape-rose"></span>
+            <div class="star-rating" aria-label="5 out of 5 stars">
+              <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <p class="review-quote">
+              "Having the Lo-Fi room open on my laptop while working through organic chemistry saved my semester. Seeing other people quietly grinding keeps me off my phone!"
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">PK</div>
+              <div>
+                <div class="author-name">Priya K.</div>
+                <div class="author-role">Biology Major • 2nd Year</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="card review-card">
+            <span class="washi-tape tape-sage"></span>
+            <div class="star-rating" aria-label="5 out of 5 stars">
+              <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <p class="review-quote">
+              "The Intense Focus room with the built-in 25-minute Pomodoro timer helped me finish my senior thesis code without pulling all-nighters. The dark paper mode is gorgeous."
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">JM</div>
+              <div>
+                <div class="author-name">Jason M.</div>
+                <div class="author-role">Computer Science Senior</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="card review-card">
+            <span class="washi-tape tape-lavender"></span>
+            <div class="star-rating" aria-label="5 out of 5 stars">
+              <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <p class="review-quote">
+              "Super straightforward. No login barriers or mandatory cameras—I just click a room, tear off my 3 goals on the legal pad, and start studying."
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">MR</div>
+              <div>
+                <div class="author-name">Maya R.</div>
+                <div class="author-role">High School Junior</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-bottom: 30px;">
+          <a href="lobby.html" class="btn btn-primary btn-large">
+            Join a Study Desk Now &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Study Together. Virtual co-working scrapbook project for students.</p>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

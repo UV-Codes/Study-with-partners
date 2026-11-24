@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Sign Up | Study Together</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/themes.css">
+
+  <!-- Immediate Theme Loader to prevent flicker -->
+  <script src="js/theme.js"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+          </svg>
+        </span>
+        <span>Study Together</span>
+        <span class="logo-sub">scrapbook</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="lobby.html">Study Rooms</a></li>
+          <li><a href="about.html">About</a></li>
+          <!-- Theme Toggle Button -->
+          <li>
+            <button type="button" class="theme-toggle-btn" aria-label="Toggle dark/light mode">
+              <span class="theme-toggle-icon"></span>
+              <span class="theme-toggle-text">Day Paper</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Login/Signup form container -->
+  <main class="auth-wrapper">
+    <div class="card auth-card">
+      <!-- Washi tape at top of the scrapbook note -->
+      <span class="washi-tape tape-honey"></span>
+      
+      <!-- Top paperclip decorator -->
+      <span class="paperclip"></span>
+
+      <div class="auth-header">
+        <span class="stamp-badge stamp-primary" style="margin-bottom: 12px;">
+          <svg class="icon-svg icon-sm" viewBox="0 0 24 24" aria-hidden="true">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          Student Desk Pass
+          <svg class="icon-svg icon-sm" viewBox="0 0 24 24" aria-hidden="true">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </span>
+        <h2 id="auth-title">Welcome Back</h2>
+        <p id="auth-subtitle">Sign in to save your study goals and progress</p>
+      </div>
+
+      <!-- Feedback alert -->
+      <div id="auth-alert" class="alert-message"></div>
+
+      <!-- Tabs -->
+      <div class="auth-tabs">
+        <button type="button" class="auth-tab active" id="tab-login">Log In</button>
+        <button type="button" class="auth-tab" id="tab-signup">Sign Up</button>
+      </div>
+
+      <!-- Form -->
+      <form id="auth-form" novalidate>
+        <!-- Name field (shown during signup) -->
+        <div class="form-group" id="group-name" style="display: none;">
+          <label for="auth-name">Your Name</label>
+          <input type="text" id="auth-name" placeholder="e.g. Maya Patel" autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label for="auth-email">Email Address</label>
+          <input type="email" id="auth-email" placeholder="name@example.com" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <label for="auth-password" style="margin-bottom: 0;">Password</label>
+            <span class="hand-note" style="font-size: 1.05rem; color: var(--text-dim);">keep it secret!</span>
+          </div>
+
+          <div class="password-input-container">
+            <input 
+              type="password" 
+              id="auth-password" 
+              placeholder="••••••••" 
+              required 
+              autocomplete="current-password"
+            >
+            <!-- Password Visibility Toggle Button -->
+            <button 
+              type="button" 
+              class="password-toggle-btn" 
+              id="toggle-password" 
+              aria-label="Show password"
+              title="Show password"
+            >
+              <!-- Eye Show SVG (when password is hidden) -->
+              <svg class="eye-show" viewBox="0 0 24 24">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <!-- Eye Hide SVG (when password is visible) -->
+              <svg class="eye-hide" style="display: none;" viewBox="0 0 24 24">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                <line x1="1" y1="1" x2="23" y2="23"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-large" style="width: 100%; margin-top: 10px;" id="auth-submit-btn">
+          Log In &rarr;
+        </button>
+      </form>
+
+      <!-- Guest option -->
+      <div class="auth-note">
+        <span>Just testing it out? </span>
+        <a href="lobby.html" id="guest-link">Continue as Guest &rarr;</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Study Together. Student co-working scrapbook project.</p>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script>
+    // Toggle between login and registration mode
+    let isSignUp = false;
+
+    const tabLogin = document.getElementById('tab-login');
+    const tabSignup = document.getElementById('tab-signup');
+    const groupName = document.getElementById('group-name');
+    const authTitle = document.getElementById('auth-title');
+    const authSubtitle = document.getElementById('auth-subtitle');
+    const authSubmitBtn = document.getElementById('auth-submit-btn');
+    const authForm = document.getElementById('auth-form');
+    const authAlert = document.getElementById('auth-alert');
+
+    // Password Visibility Toggle
+    const passwordInput = document.getElementById('auth-password');
+    const togglePasswordBtn = document.getElementById('toggle-password');
+    const eyeShow = togglePasswordBtn.querySelector('.eye-show');
+    const eyeHide = togglePasswordBtn.querySelector('.eye-hide');
+
+    togglePasswordBtn.addEventListener('click', () => {
+      const isPassword = passwordInput.getAttribute('type') === 'password';
+      if (isPassword) {
+        passwordInput.setAttribute('type', 'text');
+        eyeShow.style.display = 'none';
+        eyeHide.style.display = 'block';
+        togglePasswordBtn.setAttribute('aria-label', 'Hide password');
+        togglePasswordBtn.setAttribute('title', 'Hide password');
+      } else {
+        passwordInput.setAttribute('type', 'password');
+        eyeShow.style.display = 'block';
+        eyeHide.style.display = 'none';
+        togglePasswordBtn.setAttribute('aria-label', 'Show password');
+        togglePasswordBtn.setAttribute('title', 'Show password');
+      }
+    });
+
+    tabLogin.addEventListener('click', () => {
+      isSignUp = false;
+      tabLogin.classList.add('active');
+      tabSignup.classList.remove('active');
+      groupName.style.display = 'none';
+      authTitle.textContent = 'Welcome Back';
+      authSubtitle.textContent = 'Sign in to save your study goals and progress';
+      authSubmitBtn.innerHTML = 'Log In &rarr;';
+      hideAlert();
+    });
+
+    tabSignup.addEventListener('click', () => {
+      isSignUp = true;
+      tabSignup.classList.add('active');
+      tabLogin.classList.remove('active');
+      groupName.style.display = 'block';
+      authTitle.textContent = 'Create an Account';
+      authSubtitle.textContent = 'Join peers studying together every day';
+      authSubmitBtn.innerHTML = 'Sign Up &rarr;';
+      hideAlert();
+    });
+
+    authForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('auth-email').value.trim();
+      const password = document.getElementById('auth-password').value.trim();
+      const name = document.getElementById('auth-name') ? document.getElementById('auth-name').value.trim() : '';
+
+      if (!email || !password) {
+        showAlert('Please enter both your email and password.', 'error');
+        return;
+      }
+
+      if (isSignUp && !name) {
+        showAlert('Please enter your name.', 'error');
+        return;
+      }
+
+      if (isSignUp) {
+        fakeSignup(name, email, password);
+        showAlert('Account created! Entering lobby...', 'success');
+      } else {
+        fakeLogin(email, password);
+        showAlert('Logged in! Entering lobby...', 'success');
+      }
+
+      setTimeout(() => {
+        window.location.href = 'lobby.html';
+      }, 500);
+    });
+
+    function showAlert(msg, type) {
+      authAlert.textContent = msg;
+      authAlert.className = `alert-message ${type === 'error' ? 'alert-error' : 'alert-success'}`;
+      authAlert.style.display = 'block';
+    }
+
+    function hideAlert() {
+      authAlert.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

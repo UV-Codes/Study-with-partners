@@ -1,0 +1,583 @@
+/*
+ * Room Themes & Scrapbook Components - Study Together
+ * Custom craft styling for Cozy and Focus vibes, Lobby collage grid,
+ * Room Video frame, Retro Stopwatch Timer, and Lined Legal Pad To-Do list.
+ */
+
+/* ==========================================================================
+   1. Specific Vibe Overrides: Cozy (Warm Cafe) & Focus (Deep Sprint)
+   ========================================================================== */
+
+/* Cozy Theme (Light Mode Default) */
+body.theme-cozy,
+.card-cozy {
+  --vibe-accent: #d97736;
+  --vibe-accent-hover: #b85d20;
+  --vibe-tape: var(--tape-honey);
+  --vibe-badge-bg: #fef3c7;
+  --vibe-badge-color: #b45309;
+  --vibe-border: #fcd34d;
+}
+
+/* Cozy Theme in Dark Mode */
+[data-theme="dark"] body.theme-cozy,
+[data-theme="dark"] .card-cozy {
+  --vibe-accent: #f59e0b;
+  --vibe-accent-hover: #fbbf24;
+  --vibe-tape: rgba(245, 158, 11, 0.7);
+  --vibe-badge-bg: rgba(245, 158, 11, 0.2);
+  --vibe-badge-color: #fbbf24;
+  --vibe-border: rgba(245, 158, 11, 0.4);
+}
+
+/* Focus Theme (Light Mode Default) */
+body.theme-focus,
+.card-focus {
+  --vibe-accent: #0284c7;
+  --vibe-accent-hover: #0369a1;
+  --vibe-tape: var(--tape-sky);
+  --vibe-badge-bg: #e0f2fe;
+  --vibe-badge-color: #0369a1;
+  --vibe-border: #7dd3fc;
+}
+
+/* Focus Theme in Dark Mode */
+[data-theme="dark"] body.theme-focus,
+[data-theme="dark"] .card-focus {
+  --vibe-accent: #38bdf8;
+  --vibe-accent-hover: #7dd3fc;
+  --vibe-tape: rgba(56, 189, 248, 0.7);
+  --vibe-badge-bg: rgba(56, 189, 248, 0.18);
+  --vibe-badge-color: #38bdf8;
+  --vibe-border: rgba(56, 189, 248, 0.4);
+}
+
+/* ==========================================================================
+   2. Lobby Page Elements
+   ========================================================================== */
+
+.lobby-header {
+  padding: 38px 0 24px;
+}
+
+.lobby-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.lobby-title h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.lobby-title p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+/* Vibe filter craft tags */
+.vibe-filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  background-color: var(--bg-paper);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 1px 2px 0 var(--border-dark);
+}
+
+.filter-btn:hover {
+  color: var(--text-main);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 2px 3px 0 var(--border-dark);
+}
+
+.filter-btn.active {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-primary-hover);
+  box-shadow: 2px 3px 0 #9e3d1d;
+  font-weight: 800;
+}
+
+/* Lobby search bar */
+.search-wrapper {
+  position: relative;
+  min-width: 270px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-paper);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-main);
+  font-size: 0.92rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: var(--transition);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.search-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(217, 99, 59, 0.15);
+}
+
+/* Study rooms scrapbook moodboard grid */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 70px;
+}
+
+.room-card {
+  border-radius: 10px;
+  padding: 26px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  color: var(--text-main);
+  background-color: var(--bg-paper);
+  border: 1.5px solid var(--border-color);
+  box-shadow: var(--shadow-paper);
+  transition: var(--transition);
+}
+
+/* Natural scrapbook tilt variance */
+.room-card:nth-child(3n+1) { transform: rotate(-1.2deg); }
+.room-card:nth-child(3n+2) { transform: rotate(1deg); }
+.room-card:nth-child(3n) { transform: rotate(-0.6deg); }
+
+.room-card:hover {
+  transform: translateY(-6px) rotate(0deg) !important;
+  box-shadow: var(--shadow-float);
+  border-color: var(--vibe-accent, var(--accent-primary));
+}
+
+.room-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.room-vibe-tag {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background-color: var(--vibe-badge-bg);
+  color: var(--vibe-badge-color);
+  border: 1px dashed var(--vibe-border);
+}
+
+.room-users-count {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.room-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.room-card-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  line-height: 1.55;
+  flex-grow: 1;
+}
+
+.room-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1.5px dashed var(--border-color);
+  padding-top: 14px;
+}
+
+.room-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.room-tag {
+  font-family: var(--font-note);
+  font-size: 0.95rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: var(--bg-tag);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+}
+
+.room-join-link {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--vibe-accent, var(--accent-primary));
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: transform 0.2s ease;
+}
+
+.room-card:hover .room-join-link {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   3. Active Study Room Page Layout
+   ========================================================================== */
+
+.room-header {
+  background-color: var(--bg-paper);
+  border-bottom: 2px dashed var(--border-color);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.room-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.room-name-display {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+/* Two-column layout in room */
+.room-layout {
+  display: grid;
+  grid-template-columns: 1fr 370px;
+  gap: 24px;
+  padding: 24px;
+  flex: 1;
+  max-width: 1450px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Video Panel (Polaroid Frame Style) */
+.video-panel {
+  background-color: var(--bg-paper);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 540px;
+  box-shadow: var(--shadow-polaroid);
+  position: relative;
+}
+
+.video-header-bar {
+  padding: 10px 18px;
+  background-color: var(--bg-paper-alt);
+  border-bottom: 1.5px dashed var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.video-container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #0b0e14;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  border: none;
+  display: block;
+}
+
+/* Right Tools Panel (Timer & Tasks) */
+.tools-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Pomodoro Timer (Retro Stopwatch / Craft Clock) */
+.timer-card {
+  background-color: var(--bg-paper);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-paper);
+  position: relative;
+  transform: rotate(-0.5deg);
+}
+
+.timer-mode-selector {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.timer-mode-btn {
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  background-color: var(--bg-tag);
+  color: var(--text-muted);
+  border: 1.5px solid var(--border-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.timer-mode-btn:hover {
+  color: var(--text-main);
+  border-color: var(--accent-primary);
+}
+
+.timer-mode-btn.active {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-primary-hover);
+  box-shadow: 1px 2px 0 #9e3d1d;
+}
+
+.timer-display {
+  font-family: var(--font-mono);
+  font-size: 3.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-main);
+  font-variant-numeric: tabular-nums;
+  margin: 6px 0 16px;
+  padding: 8px 14px;
+  background: var(--bg-input);
+  border: 1.5px dashed var(--border-color);
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Lined Legal Pad Study Goals / To-Do Task List */
+.todo-card {
+  background-color: var(--sticky-yellow);
+  border: 1.5px solid var(--sticky-yellow-border);
+  border-radius: 10px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  box-shadow: 3px 6px 16px rgba(60, 45, 30, 0.12);
+  position: relative;
+  transform: rotate(0.8deg);
+}
+
+/* Red margin line on notebook */
+.todo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 28px;
+  width: 1.5px;
+  background-color: rgba(239, 68, 68, 0.25);
+  pointer-events: none;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-left: 18px;
+}
+
+.todo-header h3 {
+  font-family: var(--font-hand);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.todo-clear-btn {
+  background: none;
+  border: 1px dashed var(--text-dim);
+  border-radius: 4px;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px 8px;
+  transition: var(--transition);
+}
+
+.todo-clear-btn:hover {
+  color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+.todo-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding-left: 18px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: var(--radius-paper);
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid var(--sticky-yellow-border);
+  color: var(--text-main);
+  font-size: 0.92rem;
+  font-family: var(--font-body);
+  outline: none;
+}
+
+[data-theme="dark"] .todo-input {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.todo-input:focus {
+  border-color: var(--accent-primary);
+}
+
+.todo-list {
+  list-style: none;
+  overflow-y: auto;
+  max-height: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 18px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: var(--font-note);
+  font-size: 1.15rem;
+  transition: var(--transition);
+}
+
+[data-theme="dark"] .todo-item {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.todo-item.completed span {
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+
+.todo-item label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  flex: 1;
+  word-break: break-word;
+}
+
+.todo-item input[type="checkbox"] {
+  accent-color: var(--accent-primary);
+  cursor: pointer;
+  width: 17px;
+  height: 17px;
+}
+
+.todo-delete-btn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 1.15rem;
+  padding: 0 4px;
+}
+
+.todo-delete-btn:hover {
+  color: var(--danger-color);
+}
+
+.todo-empty-msg {
+  text-align: center;
+  font-family: var(--font-hand);
+  color: var(--text-dim);
+  font-size: 1.25rem;
+  margin: 22px 0;
+}
+
+/* Responsive query for study room */
+@media (max-width: 900px) {
+  .room-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .video-panel {
+    min-height: 380px;
+  }
+}

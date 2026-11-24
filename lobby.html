@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Rooms Lobby | Study Together</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/themes.css">
+
+  <!-- Immediate Theme Loader to prevent flicker -->
+  <script src="js/theme.js"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+          </svg>
+        </span>
+        <span>Study Together</span>
+        <span class="logo-sub">scrapbook</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="lobby.html" class="active">Study Rooms</a></li>
+          <li><a href="about.html">About</a></li>
+          <!-- Theme Toggle Button -->
+          <li>
+            <button type="button" class="theme-toggle-btn" aria-label="Toggle dark/light mode">
+              <span class="theme-toggle-icon"></span>
+              <span class="theme-toggle-text">Day Paper</span>
+            </button>
+          </li>
+          <li id="nav-auth-container">
+            <a href="login.html" class="btn btn-primary btn-sm">Log In</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Room Directory Scrapbook Moodboard -->
+  <main class="container">
+    <section class="lobby-header">
+      <div class="lobby-top-row">
+        <div class="lobby-title">
+          <h1>Study Rooms Moodboard</h1>
+          <p id="lobby-user-greeting">Choose a room below to jump straight in.</p>
+        </div>
+
+        <!-- Search input -->
+        <div class="search-wrapper">
+          <input 
+            type="text" 
+            id="lobby-search-input" 
+            class="search-input" 
+            placeholder="Search rooms, vibes, or tags..."
+            aria-label="Search study rooms"
+          >
+        </div>
+      </div>
+
+      <!-- Vibe filters -->
+      <div class="vibe-filters">
+        <button type="button" class="filter-btn active" data-vibe="all">
+          All Desks
+        </button>
+        <button type="button" class="filter-btn" data-vibe="cozy">
+          <svg class="icon-svg icon-sm" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+          </svg>
+          Cozy Cafe
+        </button>
+        <button type="button" class="filter-btn" data-vibe="focus">
+          <svg class="icon-svg icon-sm" viewBox="0 0 24 24" aria-hidden="true">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          Intense Focus
+        </button>
+      </div>
+    </section>
+
+    <!-- Rooms grid (rendered by js/lobby.js) -->
+    <section>
+      <div class="rooms-grid" id="rooms-grid-container"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Study Together. Click any card to enter the study room.</p>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/lobby.js"></script>
+</body>
+</html>
